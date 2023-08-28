@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #Mydiv{
+        margin-top: 50px;
+        margin-left: 180px;
+             display: grid;
+             grid-template-rows: repeat(2,1fr);
+             grid-template-columns: repeat(3,1fr);
+             row-gap: 30px;
+             column-gap: 30px;
+             justify-content: space-evenly;
+
+             
+      }
+
+      #Mydiv>div{
+        height: 200px;
+        width: 200px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        
+
+        
+       
+      }
+      #m1
+      {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #myId
+      {
+        color: brown;
+      }
+    </style>
+</head>
+<body>
+ 
+  <h1 style="text-align: center;">SELECT CATOGERY</h1>
+  <div id="m1">
+    <div id="1"><button>Electronics</button></div>
+    <div id="2"><button>Books</button></div>
+    <div id="3"><button>Home & Kitchen</button></div>
+    <div id="4"><button>Toys & Games</button></div>
+  </div>
+
+    <div id="Mydiv">
+  
+    </div>
+
+</body>
+</html>
+<script>
+    const products = [
+  {
+    name: 'Product 1',
+    category: 'Electronics',
+    price: 799.99,
+    available: true,
+  },
+  {
+    name: 'Product 2',
+    category: 'Books',
+    price: 19.99,
+    available: true,
+  },
+  {
+    name: 'Product 3',
+    category: 'Home & Kitchen',
+    price: 49.99,
+    available: false,
+  },
+  {
+    name: 'Product 4',
+    category: 'Toys & Games',
+    price: 29.99,
+    available: true,
+  },
+  {
+    name: 'Product 5',
+    category: 'Electronics',
+    price: 599.99,
+    available: true,
+  },
+  {
+    name: 'Product 6',
+    category: 'Books',
+    price: 9.99,
+    available: true,
+  },
+];
+
+  var box=document.getElementById("Mydiv")
+  
+  products.forEach(element => {
+    var box1=document.createElement("div")
+    let Name=element.name;
+    // Name.setAttribute('id', 'myId');
+    let Category=element.category;
+    let Price=element.price;
+    let Available=element.available;
+    box1.append(Name,Category,Price,Available);
+    box.append(box1)
+   
+
+  });
+  document.getElementById("1").addEventListener("click",myfun)
+  function myfun()
+  {
+   box.innerHTML='';
+    products.forEach(element => {
+      if(element.category=="Electronics")
+    {
+    var box1=document.createElement("div")
+    let Name=element.name;
+    
+    let Category=element.category;
+    let Price=element.price;
+    let Available=element.available;
+    box1.append(Name,Category,Price,Available);
+    box.append(box1)
+   
+  }  
+  });
+
+  }
+  
+// 2
+document.getElementById("2").addEventListener("click",myfun1)
+  function myfun1()
+  {
+   box.innerHTML='';
+    products.forEach(element => {
+      if(element.category=="Books")
+    {
+    var box1=document.createElement("div")
+    let Name=element.name;
+    let Category=element.category;
+    let Price=element.price;
+    let Available=element.available;
+    box1.append(Name,Category,Price,Available);
+    box.append(box1)
+   
+  }  
+  });
+
+  }
+
+// 3
+document.getElementById("3").addEventListener("click",myfun2)
+  function myfun2()
+  {
+   box.innerHTML='';
+    products.forEach(element => {
+      if(element.category=="Home & Kitchen")
+    {
+    var box1=document.createElement("div")
+    let Name=element.name;
+    let Category=element.category;
+    let Price=element.price;
+    let Available=element.available;
+    box1.append(Name,Category,Price,Available);
+    box.append(box1)
+   
+  }  
+  });
+
+  }
+// 4
+
+document.getElementById("4").addEventListener("click",myfun3)
+  function myfun3()
+  {
+   box.innerHTML='';
+    products.forEach(element => {
+      if(element.category=="Toys & Games")
+    {
+    var box1=document.createElement("div")
+    let Name=element.name;
+    let Category=element.category;
+    let Price=element.price;
+    let Available=element.available;
+    box1.append(Name,Category,Price,Available);
+    box.append(box1)
+   
+  }  
+  });
+
+  }
+</script>
